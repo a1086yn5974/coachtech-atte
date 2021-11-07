@@ -16,11 +16,7 @@ class RestsTableSeeder extends Seeder
     {
         $param = [
             'work_id' => '5',
-            'user_name' => '兵庫太郎',
-            'date' => date('Y-m-d'),
-            'start_rest_time' => time('H:i:s'),
-            'end_rest_time' => time('H:i:s'),
-            'rest_time' => time('H:i:s')
+            'user_name' => '兵庫太郎'
         ];
         DB::table('rests')->insert($param);
     }
