@@ -15,7 +15,7 @@ class CreateRestsTable extends Migration
     {
         Schema::create('rests', function (Blueprint $table) {
             $table->id();
-            $table->char('work_id');
+            $table->id('work_id');
             $table->char('user_name');
             $table->date('date');
             $table->time('start_rest_time');
@@ -25,8 +25,7 @@ class CreateRestsTable extends Migration
             $table->timestamp('created_at')->useCurrent()->nullable();
             $table->foreign('work_id')
                     ->references('id')
-                    ->on('works')
-                    ->onDelete('cascade');
+                    ->on('works');
         });
     }
 
