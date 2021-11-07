@@ -15,7 +15,7 @@ class CreateRestsTable extends Migration
     {
         Schema::create('rests', function (Blueprint $table) {
             $table->id();
-            $table->id('work_id');
+            $table->bigIncrements('work_id');
             $table->char('user_name');
             $table->date('date');
             $table->time('start_rest_time');
