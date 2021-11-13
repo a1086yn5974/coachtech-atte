@@ -16,8 +16,7 @@ class UsersTableSeeder extends Seeder
     {
         $param = [
             'name' => '兵庫太郎',
-            'email' => 'hyougo@gmail.com',
-            'password' => 'hyougo2021'
+            'email' => 'hyougo@gmail.com'
         ];
         DB::table('users')->insert($param);
     }
