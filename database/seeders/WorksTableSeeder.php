@@ -14,6 +14,13 @@ class WorksTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $param = [
+            'user_name' => '兵庫太郎',
+            'date' => '20211108',
+            'start_work_time' => '20:20',
+            'end_work_time' => '20:40',
+            'work_time' => '00:20'
+        ];
+        DB::table('works')->insert($param);
     }
 }
