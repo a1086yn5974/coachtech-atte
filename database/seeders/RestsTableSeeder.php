@@ -18,9 +18,9 @@ class RestsTableSeeder extends Seeder
             'work_id' => '5',
             'user_name' => '兵庫太郎',
             'date' => '20211108',
-            'start_rest_time' => '21:30',
-            'end_rest_time' => '21:40',
-            'rest_time' => '00:10'
+            'start_rest_time' => '19:10',
+            'end_rest_time' => '19:40',
+            'rest_time' => '00:30'
         ];
         DB::table('rests')->insert($param);
     }
