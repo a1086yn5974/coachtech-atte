@@ -15,7 +15,7 @@ class CreateWorksTable extends Migration
     {
         Schema::create('works', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->id();
+            $table->string('id')->unique();
             $table->string('user_table_id');
             $table->date('date')->nullable();
             $table->time('start_work_time')->nullable();
