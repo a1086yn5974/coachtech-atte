@@ -14,14 +14,19 @@ class CreateWorksTable extends Migration
     public function up()
     {
         Schema::create('works', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->id();
-            $table->char('user_name');
+            $table->string('user_table_id');
             $table->date('date')->nullable();
             $table->time('start_work_time')->nullable();
             $table->time('end_work_time')->nullable();
             $table->time('work_time')->nullable();
             $table->timestamp('updated_at')->useCurrent()->nullable();
             $table->timestamp('created_at')->useCurrent()->nullable();
+            $table->foreign('user_table_id')
+                    ->references('id')
+                    ->on('users')
+                    ->onDelete('cascade');
         });
     }
 
