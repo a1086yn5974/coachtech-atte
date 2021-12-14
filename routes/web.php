@@ -18,7 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/stamp', [StampController::class, 'index'])->middleware(['auth']);
-Route::post('/create', [StampController::class, 'create']);
+Route::post('/create-work-start', [StampController::class, 'create_work_start'])->middleware(['auth']);
+Route::post('/create-work-end', [StampController::class, 'create_work_end'])->middleware(['auth']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
