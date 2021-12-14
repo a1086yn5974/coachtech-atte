@@ -14,8 +14,9 @@ class CreateRestsTable extends Migration
     public function up()
     {
         Schema::create('rests', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->id();
-            $table->bigInteger('work_id')->nullable();
+            $table->string('work_table_id');
             $table->char('user_name')->nullable();
             $table->date('date')->nullable();
             $table->time('start_rest_time')->nullable();
@@ -23,6 +24,10 @@ class CreateRestsTable extends Migration
             $table->time('rest_time')->nullable();;
             $table->timestamp('updated_at')->useCurrent()->nullable();
             $table->timestamp('created_at')->useCurrent()->nullable();
+            $table->foreign('work_table_id')
+                    ->references('id')
+                    ->on('works')
+                    ->onDelete('cascade');
         });
     }
 
