@@ -15,12 +15,11 @@ class CreateWorksTable extends Migration
     {
         Schema::create('works', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->id();
+            $table->increments('id');
             $table->unsignedInteger('user_table_id');
             $table->date('date')->nullable();
-            $table->time('start_work_time')->nullable();
-            $table->time('end_work_time')->nullable();
-            $table->time('work_time')->nullable();
+            $table->datetime('start_work_time')->nullable();
+            $table->datetime('end_work_time')->nullable();
             $table->timestamp('updated_at')->useCurrent()->nullable();
             $table->timestamp('created_at')->useCurrent()->nullable();
             $table->foreign('user_table_id')
