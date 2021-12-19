@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class UsersTableSeeder extends Seeder
 {
@@ -15,7 +16,6 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         $param = [
-            'id' => '1',
             'name' => '兵庫太郎',
             'email' => 'hyougo@gmail.com',
             'password' => 'hyougo2021'
