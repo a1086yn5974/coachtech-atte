@@ -18,7 +18,6 @@ class WorksTableSeeder extends Seeder
         $dt = Carbon::now('Asia/Tokyo');
         $dt_end = Carbon::now('+6 hour','Asia/Tokyo');
         $param = [
-            'user_table_id' => '1',
             'date' => $dt,
             'start_work_time' => $dt,
             'end_work_time' => $dt_end
