@@ -16,12 +16,11 @@ class WorksTableSeeder extends Seeder
     public function run()
     {
         $dt = Carbon::now('Asia/Tokyo');
-        $dt_end = Carbon::now('+6 hour','Asia/Tokyo');
-        $param = [
+            $param = [
             'user_table_id' => '5',
             'date' => $dt,
             'start_work_time' => $dt,
-            'end_work_time' => $dt_end
+            'end_work_time' => $dt->addHour()
         ];
         DB::table('works')->insert($param);
     }
