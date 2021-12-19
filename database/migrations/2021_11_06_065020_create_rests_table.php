@@ -16,7 +16,7 @@ class CreateRestsTable extends Migration
         Schema::create('rests', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->id();
-            $table->string('work_table_id');
+            $table->unsignedInteger('work_table_id');
             $table->char('user_name')->nullable();
             $table->date('date')->nullable();
             $table->time('start_rest_time')->nullable();
